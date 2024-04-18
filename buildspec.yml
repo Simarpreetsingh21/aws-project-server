@@ -6,7 +6,7 @@ phases:
       - echo Logging in to AWS ECR
       - aws --version
       - aws ecr get-login-password --region ap-southeast-2 | docker login --username AWS --password-stdin 992382573200.dkr.ecr.ap-southeast-2.amazonaws.com
-      - REPOSITORY_URI=992382573200.dkr.ecr.ap-southeast-2.amazonaws.com/crud
+      - REPOSITORY_URI=992382573200.dkr.ecr.ap-southeast-2.amazonaws.com/backend-repo:latest
       - IMAGE_TAG=build-$(echo $CODEBUILD_BUILD_ID | awk -F":" '{print $2}')
   install:
     runtime-versions:
